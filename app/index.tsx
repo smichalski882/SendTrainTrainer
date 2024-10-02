@@ -1,24 +1,25 @@
-import { Text, View } from "react-native";
 import React, { useEffect, useState} from "react";
 import Logo from "./logo";
+import AddEntryButton from "./addEntryButton";
+import ViewCalendarButton from "./viewCalendarButton";
 
 export default function Index() {
   return (
-    <View
+    <div
       style={{
         flex: 1,
+        position: "relative",
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#E42C2C",
+        backgroundColor: "red",
       }}
     >
-      <button style={{ position: "absolute", top: 20, left: 20, fontSize: 50, color: "black", padding: 10, borderRadius: 25, backgroundColor: "white", justifyContent: "center", alignItems: "center"}}>
-        +
-      </button>
-      <button style={{ position: "absolute", top: 20, right: 20, fontSize: 50, color: "#E42C2C", padding: 10, borderRadius: 25, backgroundColor: "white", justifyContent: "center", alignItems: "center"}}>
-        <img src="https://icons.veryicon.com/png/o/miscellaneous/face-monochrome-icon/calendar-249.png" style={{ width: 50, height: 50 }} />
-      </button>
+      {/* position button at top left of screen */}
+      <AddEntryButton />
+      {/* position button at top right of screen */}
+      <ViewCalendarButton />
+      {/* position logo in middle of screen */}
       <Logo />
-    </View>
+    </div>
   );
 }
